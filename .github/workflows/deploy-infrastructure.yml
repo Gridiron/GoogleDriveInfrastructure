@@ -13,7 +13,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: test
+          resourceGroupName: rg-google-drive-mi
           template: ./infrastructure/main.bicep
           parameters: ./infrastructure/config.json
           failOnStdErr: false
