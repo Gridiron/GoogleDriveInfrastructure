@@ -1,0 +1,19 @@
+on: [workflow_dispatch]
+name: Azure Infrastructure
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+          resourceGroupName: test
+          template: ./infrastructure/main.bicep
+          parameters: ./infrastructure/config.json
+          failOnStdErr: false
