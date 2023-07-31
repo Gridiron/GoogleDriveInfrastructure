@@ -3,7 +3,7 @@ param resourcePostfix string
 param location string
 
 resource databaseServer 'Microsoft.Sql/servers@2022-02-01-preview' = {
-  name: 'sqlserver-${environment}-${location}-${resourcePostfix}'
+  name: 'sqlServer-${environment}-${resourcePostfix}'
   location: location
   properties: {
     administratorLogin: 'sa'
@@ -13,7 +13,7 @@ resource databaseServer 'Microsoft.Sql/servers@2022-02-01-preview' = {
 
 resource database 'Microsoft.Sql/servers/databases@2020-08-01-preview' = {
   parent: databaseServer
-  name: 'sqlDBName-${environment}-${location}-${resourcePostfix}'
+  name: 'sqlDBName-${environment}-${resourcePostfix}'
   location: location
   sku: {
     name: 'GP_S_Gen5_1'
