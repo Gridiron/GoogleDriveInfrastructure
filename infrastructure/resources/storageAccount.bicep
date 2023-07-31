@@ -18,25 +18,6 @@ resource queueServices 'Microsoft.Storage/storageAccounts/queueServices@2022-09-
   name: 'default'
   parent: storageAccount
   properties: {
-    cors: {
-      corsRules: [
-        {
-          allowedHeaders: [
-            'string'
-          ]
-          allowedMethods: [
-            'string'
-          ]
-          allowedOrigins: [
-            'string'
-          ]
-          exposedHeaders: [
-            'string'
-          ]
-          maxAgeInSeconds: 300
-        }
-      ]
-    }
   }
 }
 
@@ -44,7 +25,6 @@ resource uploadQueue 'Microsoft.Storage/storageAccounts/queueServices/queues@202
   name: 'uploadQueue${resourcePostfix}'
   parent: queueServices
   properties: {
-    metadata: {}
   }
 }
 
@@ -53,51 +33,7 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01
   name: 'default'
   parent: storageAccount
   properties: {
-    automaticSnapshotPolicyEnabled: false
-    changeFeed: {
-      enabled: true
-      retentionInDays: 30
-    }
-    containerDeleteRetentionPolicy: {
-      allowPermanentDelete: true
-      days: 365
-      enabled: true
-    }
-    cors: {
-      corsRules: [
-        {
-          allowedHeaders: [
-            'string'
-          ]
-          allowedMethods: [
-            'string'
-          ]
-          allowedOrigins: [
-            'string'
-          ]
-          exposedHeaders: [
-            'string'
-          ]
-          maxAgeInSeconds: 3000
-        }
-      ]
-    }
-    defaultServiceVersion: 'string'
-    deleteRetentionPolicy: {
-      allowPermanentDelete: true
-      days: 365
-      enabled: true
-    }
-    isVersioningEnabled: false
-    lastAccessTimeTrackingPolicy: {
-      enable: true
-      name: 'AccessTimeTracking'
-      trackingGranularityInDays: 100
-    }
-    restorePolicy: {
-      days: 365
-      enabled: false
-    }
+
   }
 }
 
@@ -106,12 +42,6 @@ resource filesContainer 'Microsoft.Storage/storageAccounts/blobServices/containe
   name: 'filesContainer${resourcePostfix}'
   parent: blobServices
   properties: {
-    denyEncryptionScopeOverride: true
-    enableNfsV3AllSquash: false
-    enableNfsV3RootSquash: true
-    immutableStorageWithVersioning: {
-      enabled: false
-    }
     publicAccess: 'Container'
   }
 }
