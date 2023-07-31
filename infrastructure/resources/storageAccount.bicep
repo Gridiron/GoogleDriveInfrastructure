@@ -99,7 +99,7 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01
     }
     restorePolicy: {
       days: 365
-      enabled: true
+      enabled: false
     }
   }
 }

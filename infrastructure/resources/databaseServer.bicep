@@ -6,7 +6,7 @@ resource databaseServer 'Microsoft.Sql/servers@2022-02-01-preview' = {
   name: 'sqlServer-${environment}-${resourcePostfix}'
   location: location
   properties: {
-    administratorLogin: 'sa'
+    administratorLogin: 'mikita_ishchanka'
     administratorLoginPassword: '31415qwerty'
   }
 }
