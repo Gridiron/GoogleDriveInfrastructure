@@ -7,7 +7,7 @@ resource databaseServer 'Microsoft.Sql/servers@2022-02-01-preview' = {
   location: location
   properties: {
     administratorLogin: 'mikita_ishchanka'
-    administratorLoginPassword: '31415qwerty'
+    administratorLoginPassword: '31415Qwerty'
   }
 }
 

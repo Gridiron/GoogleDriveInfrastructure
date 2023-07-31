@@ -90,9 +90,6 @@ resource blobServices 'Microsoft.Storage/storageAccounts/blobServices@2022-09-01
     }
     isVersioningEnabled: false
     lastAccessTimeTrackingPolicy: {
-      blobType: [
-        'string'
-      ]
       enable: true
       name: 'AccessTimeTracking'
       trackingGranularityInDays: 100
@@ -109,7 +106,6 @@ resource filesContainer 'Microsoft.Storage/storageAccounts/blobServices/containe
   name: 'filesContainer${resourcePostfix}'
   parent: blobServices
   properties: {
-    defaultEncryptionScope: 'string'
     denyEncryptionScopeOverride: true
     enableNfsV3AllSquash: false
     enableNfsV3RootSquash: true
