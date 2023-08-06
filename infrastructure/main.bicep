@@ -70,3 +70,12 @@ module appService 'resources/appService.bicep' = {
     resourcePostfix: config.resourcePostfix
   }
 }
+
+module serviceBus 'resources/serviceBus.bicep' = {
+  name: 'serviceBus-deployment'
+  params: {
+    location: config.location
+    environmentName: config.environment
+    resourcePostfix: config.resourcePostfix
+  }
+}

@@ -18,7 +18,7 @@ param sku string = 'Developer'
 param skuCount int = 1
 param location string = resourceGroup().location
 
-resource apiManagementService 'Microsoft.ApiManagement/service@2021-08-01' = {
+resource apiManagementService 'Microsoft.ApiManagement/service@2022-04-01-preview' = {
   name: apiManagementServiceName
   location: location
   sku: {
