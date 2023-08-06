@@ -21,8 +21,8 @@ resource queueServices 'Microsoft.Storage/storageAccounts/queueServices@2022-09-
   }
 }
 
-resource uploadQueue 'Microsoft.Storage/storageAccounts/queueServices/queues@2022-09-01' = {
-  name: 'uploadqueue${resourcePostfix}'
+resource uploadHistoryQueue 'Microsoft.Storage/storageAccounts/queueServices/queues@2022-09-01' = {
+  name: 'uploadhistoryqueue${resourcePostfix}'
   parent: queueServices
   properties: {
   }
