@@ -1,16 +1,9 @@
 param environment string
 param resourcePostfix string
-
-@description('Location for the Cosmos DB account.')
 param location string = resourceGroup().location
-
-@description('The name for the SQL API database')
 param databaseName string
-
-@description('The name for the SQL API container')
 param containerName string
 
-@description('Cosmos DB account name')
 var accountName = 'cosmos-${environment}${resourcePostfix}'
 
 resource account 'Microsoft.DocumentDB/databaseAccounts@2022-05-15' = {

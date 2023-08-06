@@ -49,3 +49,24 @@ module cosmosDb 'resources/cosmosDb.bicep' = {
     resourcePostfix: config.resourcePostfix
   }
 }
+
+module apiManagement 'resources/apiManagement.bicep' = {
+  name: 'apiManagement-deployment'
+  params: {
+    publisherEmail: 'nikitai100300100300@gmail.com'
+    publisherName: 'Mikita Ishchanka'
+    location: config.location
+    environment: config.environment
+    resourcePostfix: config.resourcePostfix
+  }
+}
+
+module appService 'resources/appService.bicep' = {
+  name: 'appService-deployment'
+  params: {
+    planConfig: config.planConfig
+    location: config.location
+    environment: config.environment
+    resourcePostfix: config.resourcePostfix
+  }
+}

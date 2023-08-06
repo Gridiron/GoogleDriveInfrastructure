@@ -1,25 +1,15 @@
 
 param environmentName string
 param resourcePostfix string
-
-@description('The name of the function app that you wish to create.')
 param appName string = 'googleDriveFunctionApp${environmentName}${resourcePostfix}'
-
-@description('Storage Account type')
 @allowed([
   'Standard_LRS'
   'Standard_GRS'
   'Standard_RAGRS'
 ])
 param storageAccountType string = 'Standard_LRS'
-
-@description('Location for all resources.')
 param location string = resourceGroup().location
-
-@description('Location for Application Insights')
 param appInsightsLocation string = resourceGroup().location
-
-@description('The language worker runtime to load in the function app.')
 @allowed([
   'node'
   'dotnet'
